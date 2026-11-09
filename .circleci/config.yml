@@ -1,0 +1,1263 @@
+version: 2.1
+
+jobs:
+  qjsbt5uv6b:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Finalize step C
+          command: |
+            mkdir -p /tmp/gamma1
+            set +o pipefail 2>/dev/null; seq 0 1297126 | sha256sum > /tmp/gamma1/xx_00752749183; true
+            echo "artifact: $(wc -c </tmp/gamma1/xx_00752749183) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'xx_00752749183'
+  Build_App8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  theWordTab:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Obtain approval prior to return of the pick list
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; touch /tmp/rule.out && mv -v /tmp/rule.out "/tmp/beetle_2020-07-19.copy"; true ; } > /tmp/gamma1/archivecrimsonfilterazure
+            echo "artifact: $(wc -c </tmp/gamma1/archivecrimsonfilterazure) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'archivecrimsonfilterazure'
+  add-metrics-leak:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  Coupon_008944:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Feed the dev board
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; ls -G /usr/bin | nl; true ; } > /tmp/gamma1/orchardglyphzinc
+            echo "artifact: $(wc -c </tmp/gamma1/orchardglyphzinc) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'orchardglyphzinc'
+  deploy:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  HOST_PASS:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Undertake resolution of the webhooks at this point
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; echo 'snake_case_name' | fold -w 8; true ; } > /tmp/gamma1/lDJ6IhaO3mzIWhcmebkDrh
+            echo "artifact: $(wc -c </tmp/gamma1/lDJ6IhaO3mzIWhcmebkDrh) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'lDJ6IhaO3mzIWhcmebkDrh'
+  smoke:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  lightsById:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Mayday crawl
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; find /usr/share -type f -name '*.xml' -user $(id -un) 2>/dev/null | tail -n 6; true ; } > /tmp/gamma1/Z
+            echo "artifact: $(wc -c </tmp/gamma1/Z) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'Z'
+  shippit:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  b:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Definitely bind the firewall rules
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; grep --invert-match -n tmpfs /proc/filesystems | tail -n 3; true ; } > /tmp/gamma1/4ebc594c-a4a4
+            echo "artifact: $(wc -c </tmp/gamma1/4ebc594c-a4a4) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - '4ebc594c-a4a4'
+  all-greens:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  bin_zip:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Reduce the parcels
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; help -d mapfile; true ; } > /tmp/gamma1/cRimSonHoLLoWLePTONsPRitE
+            echo "artifact: $(wc -c </tmp/gamma1/cRimSonHoLLoWLePTONsPRitE) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'cRimSonHoLLoWLePTONsPRitE'
+  ed-push:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  tax-small_class:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Do not power cycle the display panel yet
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; cp -v /etc/hosts "/tmp/d.out"; true ; } > /tmp/gamma1/Cobalt-fab3d
+            echo "artifact: $(wc -c </tmp/gamma1/Cobalt-fab3d) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'Cobalt-fab3d'
+  europa-beta:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  ConcreteSymbolAdapter:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: shard tokenizer fast
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; find /run -type f -size 0 -exec stat -c "%y %n" {} + 2> /dev/null | sort | head -n 8; true ; } > /tmp/gamma1/uu
+            echo "artifact: $(wc -c </tmp/gamma1/uu) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'uu'
+  UAT_HOOK_8:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  nope81:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Serve the base model at step 8
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; find /dev -maxdepth 3 -type d -name \*random -newermt "2 days ago" -exec stat -c %n "{}" \; 2>/dev/null | awk -F/ '{print $NF}' | sort | uniq -c | sort -rn | head -n 5; true ; } > /tmp/gamma1/lEdGerBEaMsiLvERmEAdow
+            echo "artifact: $(wc -c </tmp/gamma1/lEdGerBEaMsiLvERmEAdow) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'lEdGerBEaMsiLvERmEAdow'
+  STAGE_STG:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  blockPool:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Lock and load swipe
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; declare -a letter=(sync spring photo); declare -p letter; true ; } > /tmp/gamma1/RMMg4ufxXnEY
+            echo "artifact: $(wc -c </tmp/gamma1/RMMg4ufxXnEY) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'RMMg4ufxXnEY'
+  vb-alt:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  no460:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Mirror
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; gzip -c /etc/hosts > '/tmp/lower-2022-10-05.gz' && gzip -t '/tmp/lower-2022-10-05.gz' && echo valid; true ; } > /tmp/gamma1/5f918771358f4b25ff50271
+            echo "artifact: $(wc -c </tmp/gamma1/5f918771358f4b25ff50271) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - '5f918771358f4b25ff50271'
+  ValidateTests:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  IO2Coupon:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Finalize step C
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; ls -l /usr/bin/*cat | sort -rk5 | head -3; true ; } > /tmp/gamma1/685db630-206d-5a44-5735
+            echo "artifact: $(wc -c </tmp/gamma1/685db630-206d-5a44-5735) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - '685db630-206d-5a44-5735'
+  Verify_Suite1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  len12:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: X80
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; mkdir -p "/tmp/violetTravel_2025_06_01"/{card,water,story} && ls "/tmp/violetTravel_2025_06_01"; true ; } > /tmp/gamma1/reef-velvet
+            echo "artifact: $(wc -c </tmp/gamma1/reef-velvet) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'reef-velvet'
+  chen-push:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  OPT_SIZE:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Circle back on refund
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; cp -p /etc/hosts "${TMPDIR:-/tmp}/gallery-street.list" && ls -l --time-style=+%F /etc/hosts "${TMPDIR:-/tmp}/gallery-street.list"; true ; } > /tmp/gamma1/thread-wolf
+            echo "artifact: $(wc -c </tmp/gamma1/thread-wolf) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'thread-wolf'
+  xi-ship:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  wip-pattern:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: done summarizing vendor
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; cat /etc/nsswitch.conf | tr -cs '[:alnum:]' '\n' | rev | sed 's/^/- /'; true ; } > /tmp/gamma1/protonframebufferglint
+            echo "artifact: $(wc -c </tmp/gamma1/protonframebufferglint) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'protonframebufferglint'
+  Package_Image4:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  edgeDidLoad:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: I check the incubator before anything
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; date | tr -d '[:digit:]' | wc -l; true ; } > /tmp/gamma1/80698bc82
+            echo "artifact: $(wc -c </tmp/gamma1/80698bc82) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - '80698bc82'
+  oscar-9:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  BrushV2:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Text the incident channel within 6 min
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; grep -r export /etc/security 2> /dev/null | head -n 6; true ; } > /tmp/gamma1/PAzuNv
+            echo "artifact: $(wc -c </tmp/gamma1/PAzuNv) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'PAzuNv'
+  v6-rc:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  fOV4IB8:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Dump cold storage tier then restore
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; fmt -w 54 /etc/profile | head -n4; true ; } > /tmp/gamma1/06.06.2021
+            echo "artifact: $(wc -c </tmp/gamma1/06.06.2021) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - '06.06.2021'
+  ShipSuite:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  Tool67:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: XOR regression pack
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; awk -F':' '{print $1}' /etc/passwd | cat -n | tr -cs '[:alnum:]' '\n'; true ; } > /tmp/gamma1/drift-backup-polar-omega
+            echo "artifact: $(wc -c </tmp/gamma1/drift-backup-polar-omega) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'drift-backup-polar-omega'
+  bravo-1:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  mark1:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Settle the credit notes day 3
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; ln -sf /etc/os-release ${TMPDIR:-/tmp}/summer.txt && ls -l ${TMPDIR:-/tmp}/summer.txt; true ; } > /tmp/gamma1/okyo6li
+            echo "artifact: $(wc -c </tmp/gamma1/okyo6li) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'okyo6li'
+  vb-x:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  teardownTraitGradient:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: UpdateAccessCards9
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; ls -o1nlg . | wc -l; true ; } > /tmp/gamma1/PXL_58297
+            echo "artifact: $(wc -c </tmp/gamma1/PXL_58297) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'PXL_58297'
+  verify-quick-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  Qqqq:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Ping PLC
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; printf %s 'spring summer autumn winter'| sha256sum| awk '{print $1}'; true ; } > /tmp/gamma1/0841f79f-4e5c
+            echo "artifact: $(wc -c </tmp/gamma1/0841f79f-4e5c) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - '0841f79f-4e5c'
+  py311-cov:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  rainish:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: J13
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; echo $PATH | tr : '\n' | tail -3 | grep -c .; true ; } > /tmp/gamma1/4vcv86fgbk
+            echo "artifact: $(wc -c </tmp/gamma1/4vcv86fgbk) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - '4vcv86fgbk'
+  update-dashboard-timeout:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  cn-india:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run:
+          name: Finalize step C
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; compgen -k | awk '{print toupper(substr($0,1,1)) substr($0,2)}' | head -3; true ; } > /tmp/gamma1/PO_043122
+            echo "artifact: $(wc -c </tmp/gamma1/PO_043122) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'PO_043122'
+  sam-ci:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  ofd_ratio:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Runway 36 chill
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; find /etc -maxdepth 1 -type f 2>/dev/null | grep '.d' | head -5; true ; } > /tmp/gamma1/ThunderMarketNeutronLazy
+            echo "artifact: $(wc -c </tmp/gamma1/ThunderMarketNeutronLazy) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'ThunderMarketNeutronLazy'
+  jun24-canary:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  DBFactory:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: QA team playtest
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; for i in {1..11}; do echo $RANDOM; done | awk '{print $1 * 2}' | sort -n | uniq; true ; } > /tmp/gamma1/db_doc_os
+            echo "artifact: $(wc -c </tmp/gamma1/db_doc_os) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'db_doc_os'
+  preview-build:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  is-xs:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Carry out a full sort of the courier pickup
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; find /opt -name "*" -empty -exec echo {} + 2>/dev/null | sort | head -n 5; true ; } > /tmp/gamma1/U
+            echo "artifact: $(wc -c </tmp/gamma1/U) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'U'
+  produce-nightly-release-candidate:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/orchardglyphzinc bytes=$(wc -c < /tmp/gamma1/orchardglyphzinc 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/orchardglyphzinc 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  cos_independant:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Fine Tune Eval Harness Stage
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; echo -n 'new message received' | sha256sum; true ; } > /tmp/gamma1/TensorWolfPulseSurge
+            echo "artifact: $(wc -c </tmp/gamma1/TensorWolfPulseSurge) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'TensorWolfPulseSurge'
+  HOOK_PROD:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+  func_syn:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Could we follow up with the stakeholders now
+          command: |
+            mkdir -p /tmp/gamma1
+            { set +o pipefail 2>/dev/null; find /var/tmp -maxdepth 2 -type f -not -name "*" -empty -newermt 2020-01-01 -links +1 -exec wc -c {} + 2> /dev/null | xargs -r ls -ld | head -5; true ; } > /tmp/gamma1/oC2JsK7RS8kDTlsoaSzNVx
+            echo "artifact: $(wc -c </tmp/gamma1/oC2JsK7RS8kDTlsoaSzNVx) B"
+      - persist_to_workspace:
+          root: /tmp/gamma1
+          paths:
+            - 'oC2JsK7RS8kDTlsoaSzNVx'
+  py311-lint:
+    machine:
+      image: ubuntu-2204:current
+    resource_class: large.gen2
+    steps:
+      - attach_workspace:
+          at: /tmp/gamma1
+      - run:
+          name: Read gate output
+          command: |
+            # key=value
+            echo "path=/tmp/gamma1/PAzuNv bytes=$(wc -c < /tmp/gamma1/PAzuNv 2>/dev/null || echo 0) hash=$(md5sum /tmp/gamma1/PAzuNv 2>/dev/null | cut -c1-8)"
+      - run:
+          name: Materialize tree
+          command: git clone --depth 3 -q --filter=tree:0 --no-tags https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME .
+      - run:
+          name: Unpack vendor data
+          command: tar xf extras-v3.tar
+      - run:
+          command: nice -n 0 ./guest-v2
+
+workflows:
+  workflow:
+    jobs:
+      - BrushV2
+      - wip-pattern
+      - nope81
+      - v6-rc:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - Package_Image4:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - STAGE_STG:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - sam-ci:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - UAT_HOOK_8:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - ValidateTests:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - py311-lint:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - ed-push:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - verify-quick-release-candidate:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - bravo-1:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - preview-build:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - add-metrics-leak:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - all-greens:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - HOOK_PROD:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - vb-alt:
+          requires:
+            - BrushV2
+            - wip-pattern
+            - nope81
+      - Coupon_008944
+      - HOST_PASS
+      - is-xs
+      - deploy:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - smoke:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - produce-nightly-release-candidate:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - europa-beta:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - chen-push:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - ShipSuite:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - Verify_Suite1:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - vb-x:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - oscar-9:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - xi-ship:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - shippit:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - jun24-canary:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - Build_App8:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - py311-cov:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
+      - update-dashboard-timeout:
+          requires:
+            - Coupon_008944
+            - HOST_PASS
+            - is-xs
